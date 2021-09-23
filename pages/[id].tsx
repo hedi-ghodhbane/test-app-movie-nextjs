@@ -41,7 +41,7 @@ function MovieDetails() {
         </div>
       )}
       { !loading && movie && <div className={styles.movie}>
-        <Image
+        <img
           src={
             movie?.poster_path
               ? IMAGE_BASE_URL + movie?.poster_path

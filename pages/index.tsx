@@ -93,7 +93,7 @@ let highlighted = [];
         {movies.map((movie) => (
           <div className={"poster"+  (highlightedMovies.indexOf(movie.id) !== -1 ? " highlighted":"")} key={movie.id}>
             <a href={"/" + movie.id}>
-              <Image
+              <img
                 src={
                   movie.poster_path
                     ? IMAGE_BASE_URL + movie.poster_path

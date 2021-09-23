@@ -7,10 +7,9 @@ align-items: center;
 justify-content: space-around;
 color: white;
 }
-.movie > img {
+.movie  .img {
     width:20%; 
     height: 60%;
-    
 }
 .details {
     width: 50% ;
@@ -34,7 +33,7 @@ color: white;
     cursor: pointer;
 }
 @media screen and (max-width:1500px) {
- .movie > img {
+ .movie > .img {
     width:30%; 
     
 }
@@ -48,7 +47,7 @@ color: white;
 }   
 }
 @media screen and (max-width:900px) {
-    .movie > img {
+    .movie > .img {
         width: 40%;
     }
 .details {
@@ -66,7 +65,7 @@ color: white;
         width: 80%;
         text-align: center;
     }
-    .movie > img {
+    .movie > .img {
         width: 50%;
     }
 .links {
