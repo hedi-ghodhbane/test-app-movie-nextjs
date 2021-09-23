@@ -1,0 +1,80 @@
+.movie {
+display: flex;
+min-height: 100vh;
+width: 90%;
+margin: 1% auto;
+align-items: center;
+justify-content: space-around;
+color: white;
+}
+.movie > img {
+    width:20%; 
+    height: 60%;
+    
+}
+.details {
+    width: 50% ;
+    align-self: flex-start;
+    margin-top: 10%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.links {
+    margin-top: 3%;
+
+}
+.links a {
+    opacity: 0.8;
+    margin-left: 1%;
+    border-radius: 5px;
+    padding: 1%;
+    border: 1px solid red;
+    cursor: pointer;
+}
+@media screen and (max-width:1500px) {
+ .movie > img {
+    width:30%; 
+    
+}
+.details {
+    margin-top: 10%;
+}   
+}
+@media screen and (max-width:1200px) {
+.details {
+    margin-top: 15%;
+}   
+}
+@media screen and (max-width:900px) {
+    .movie > img {
+        width: 40%;
+    }
+.details {
+    margin-top: 25%;
+}
+}
+@media screen and (max-width:700px) {
+    .movie {
+        margin-top: 5%;
+        flex-direction: column;
+    }
+    .details{
+        margin-top: 5%;
+        align-self: center;
+        width: 80%;
+        text-align: center;
+    }
+    .movie > img {
+        width: 50%;
+    }
+.links {
+    width: 70%;
+
+}
+.links a {
+    margin-left: 10%;
+}
+
+}
