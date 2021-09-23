@@ -7,8 +7,10 @@ import {Movie} from "../models/movie";
 import {IMAGE_BASE_URL} from "../config/tmdb";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowDown, faArrowUp, faStar} from "@fortawesome/free-solid-svg-icons";
+
+import Image from 'next/image'
+//@ts-ignore
 import ReactPaginate from "react-paginate";
-import Link from "next/link";
 
 const placholderImage =
   "https://www.shobgulo.com/wp-content/uploads/woocommerce-placeholder-450x450.png";
@@ -45,11 +47,7 @@ const Home: NextPage = () => {
     setTotalResults(result.total_results);
     setMovies(result.results);
   };
-  useEffect(() => {
-    getMovies();
-    setHighlighted(); 
-  }, [sort, page]);
-  const setHighlighted = async ()=>{
+ const setHighlighted = async ()=>{
 let highlighted = [];
     for(let item in localStorage){
       console.log(item);  
@@ -60,6 +58,11 @@ let highlighted = [];
     console.log(highlighted);
     setHighlightedMovies(highlighted);
   }
+  useEffect(() => {
+    getMovies();
+    setHighlighted(); 
+  }, [sort, page]);
+ 
   return (
     <Layout title="Movie App">
       {loading && (
@@ -90,7 +93,7 @@ let highlighted = [];
         {movies.map((movie) => (
           <div className={"poster"+  (highlightedMovies.indexOf(movie.id) !== -1 ? " highlighted":"")} key={movie.id}>
             <a href={"/" + movie.id}>
-              <img
+              <Image
                 src={
                   movie.poster_path
                     ? IMAGE_BASE_URL + movie.poster_path

@@ -6,7 +6,9 @@ import MovieService from "../services/movies_service";
 import {useState} from "react";
 import {Movie} from "../models/movie";
 import {IMAGE_BASE_URL} from "../config/tmdb";
+//@ts-ignore
 import ReactStars from "react-rating-stars-component";
+import Image from 'next/image'
 
 import styles from "../styles/Movie.module.css";
 const placholderImage =
@@ -39,7 +41,7 @@ function MovieDetails() {
         </div>
       )}
       { !loading && movie && <div className={styles.movie}>
-        <img
+        <Image
           src={
             movie?.poster_path
               ? IMAGE_BASE_URL + movie?.poster_path
@@ -79,12 +81,17 @@ function MovieDetails() {
           />
           {movie?.vote_average}  from ({movie?.vote_count})  reviews
           <div className={styles.links}>
-            <a href={movie?.homepage} target="_blank">
+            <a
+            
+rel="noreferrer"
+            href={movie?.homepage} target="_blank">
               Home Page
             </a>
             <a
               href={"https://www.imdb.com/title/" + movie?.imdb_id}
               target="_blank"
+
+rel="noreferrer"
             >
               IMDb
             </a>
